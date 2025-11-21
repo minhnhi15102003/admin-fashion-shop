@@ -5,9 +5,16 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(),svgr({
+  // ⚠️ Quan trọng cho GitHub Pages
+  base: "/admin-fashion-shop/",
+  
+  plugins: [
+    react(),
+    tailwindcss(),
+    svgr({
       svgrOptions: {
-        icon: true, // để svg tự động scale theo viewBox
+        icon: true, // svg tự động scale
       },
-    })],
+    }),
+  ],
 })
