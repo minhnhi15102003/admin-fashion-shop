@@ -5,11 +5,13 @@
   "homepage": "https://minhnhi15102003.github.io/admin-fashion-shop/",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "lint": "eslint .",
+  "preview": "vite preview",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+},
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@svgdotjs/svg.js": "^3.2.5",
