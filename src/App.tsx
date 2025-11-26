@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/admin-fashion-shop">
         <ToastContainer />
         <Routes>
           <Route element={<ProtectedRoute/>}>

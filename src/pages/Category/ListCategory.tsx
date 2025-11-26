@@ -33,8 +33,10 @@ const ListCategory = () => {
             const res = await uploadFile(formData)
             if (res.status === 201) {
                 console.log(res);
-                setImage(`${baseURL}/${res.data.data.path}`)
+                setImage(res.data.data.path)
+                // setImage(`${baseURL}/${res.data.data.path}`)
             }
+            
         } catch (error) {
 
         }
@@ -73,6 +75,7 @@ const ListCategory = () => {
             refetchListCategory();
         }
     }
+    
         return (
             <div>
                 <PageBreadCrumb pageTitle="Danh sách danh mục" />
@@ -97,7 +100,7 @@ const ListCategory = () => {
                                             {item.name}
                                         </td>
                                         <td className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
-                                            <img src={item.image} width={100} height={100} />
+                                            <img src={(`${baseURL}/${item.image}`)} width={100} height={100} />
                                         </td>
                                         <td className="px-4 py-3 text-gray-500 text-start text-theme-sm dark:text-gray-400">
                                             {dayjs(item.createdAt).format("YYYY-MM-DD HH:mm")}
@@ -149,7 +152,7 @@ const ListCategory = () => {
 
                                 {image && (
                                     <div className="pt-3 relative ">
-                                        <img src={image} width={300} height={300} className="rounded-2xl" />
+                                        <img src={(`${baseURL}/${image}`)} width={300} height={300} className="rounded-2xl" />
 
                                         <Button
                                             size="sm"

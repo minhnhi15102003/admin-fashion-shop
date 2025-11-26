@@ -5,13 +5,12 @@ import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   base: "/admin-fashion-shop/",
-  
   plugins: [
     react(),
     tailwindcss(),
     svgr({
       svgrOptions: {
-        icon: true, // svg tự động scale
+        icon: true,
       },
     }),
   ],
